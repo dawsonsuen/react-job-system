@@ -1,0 +1,96 @@
+@import '~antd/dist/antd.css';
+
+/* navbar start */
+.ant-layout-header {
+  overflow: hidden;
+}
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background-color:#f0f2f5;
+}
+.login-form {
+  max-width: 300px;
+  margin: 10% auto;
+}
+.login-form-forgot {
+  float: right;
+}
+.login-form-button {
+  width: 100%;
+}
+.register-form {
+max-width: 900px;
+}
+.profile {
+  float: left;
+}
+/* narbar end */
+
+/* jobsview start */
+.ant-layout {
+  height: 100%;
+}
+/* jobsview end */
+
+/* jobdetail start */
+.table {
+width: auto;
+min-width: 600px;
+margin:10% auto;
+line-height: 50px;
+}
+th {
+  padding-left: 10px;
+}
+td {
+  padding-left: 10px;
+  background-color: #fff;
+}
+/* jobdetail end */
+
+.logo {
+  width: 120px;
+  height: 31px;
+  /* background: rgba(255,255,255,.2);   */
+  margin: 16px 28px 16px 0px;
+  float: left;
+  text-align: left;
+  line-height: 31px;
+  color: #fff;
+}
+.logo img {
+  height: 16px;
+}
+.mydetail {
+  text-align: center;
+  margin-top: 60%;
+  width: 200%;
+  margin-left: 100%;
+  line-height: 30px;}
+.footer {
+  background-color: #011c2c;
+  color:white;
+  width: 100%;
+}
+.footer, .span3 h4, .span4 h4 {
+  color:#fff;
+  /* font-weight:bold !important; */
+} 
+.footer, .span3 {
+  float: left;
+  padding: auto 10px;
+    min-height: 0;
+}
+.footer p {
+  max-width: 300px;
+}
+.footer, .span4 {
+  float: right;
+  padding: auto 10px;
+  min-height: 0;
+  margin-right:15%;
+} 
+  
+
+

@@ -1,17 +1,16 @@
-import "./App.css";
-import Routes from "./App/Routes.js";
+import React from "react";
 import { Layout } from "antd";
+import Routes from "./App/Routes";
+import TopNav from "./App/TopNav";
+import Foot from "./App/Foot";
 
-function App() {
-  const { Header, Footer, Sider, Content } = Layout;
+export default function App() {
 
   return (
-    // <div className="App">
-      <Layout>
-        <Routes />
-      </Layout>
-    // </div>
+    <Layout>
+      <TopNav />
+      <Routes />
+      <Foot />
+    </Layout>
   );
 }
-
-export default App;

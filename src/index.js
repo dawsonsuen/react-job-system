@@ -1,18 +1,19 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { HashRouter as Router } from "react-router-dom";
+import axios from 'axios';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'typeface-roboto';
+import {
+	HashRouter as Router,
+} from 'react-router-dom';
+import './styles';
+import App from './App';
+axios.defaults.baseURL = 'http://localhost:5000/api';
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
-  document.getElementById("root")
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <Router>
+		<App/>
+	</Router>,
+
+	document.getElementById('root'),
+);

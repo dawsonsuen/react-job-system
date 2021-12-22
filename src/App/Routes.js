@@ -1,18 +1,39 @@
-import React from "react";
-import { Layout } from "antd";
-import { Route, Redirect } from "react-router-dom";
-import JobsView from "../Views/Job/JobsView";
-// import {JobDetailView} from './Views/Job/JobDetailView';
-// import {JobEditView} from './Views/Job/JobEditView';
-
+import React from 'react';
+import {Route, Redirect} from 'react-router-dom';
+import JobsView from '../Job/JobsView';
+import JobEditView from'../Job/JobEditView';
+import MyDetail from '../User/MyDetail';
+import SigninView from'../User/SigninView';
+import Register from '../User/Register';
+import {fakeAuth} from '../User/SigninView';
+import { Layout } from 'antd';
+import Profile from '../User/Profile';
 const { Content } = Layout;
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default () => (
-  <Content>
-    <Route exact path="/" component={JobsView} />
-    <Route exact path="/jobs" component={JobsView} />
-    {/* <Route exact path="/jobs/:JobNumber" component={JobDetailView}/>
-        <Route exact path="/jobs/:JobNumber/edit" component={JobEditView}/> */}
-  </Content>
+export default () =>(
+
+    <Content>
+        <ProtectedRoute exact path="/" component={JobsView}/>
+        <ProtectedRoute exact path="/jobs" component={JobsView}/>
+        <ProtectedRoute exact path="/jobs/edit/:Id" component={JobEditView}/>
+        <ProtectedRoute exact path="/mydetail/:Id" component={MyDetail}/>
+        <Route exact path="/signin" component={SigninView}/>
+        <Route exact path="/register" component={Register}/>
+        <ProtectedRoute exact path="/profile" component={Profile}/>
+    </Content>
+);
+const ProtectedRoute = ({component:ProtectedComponent, ...rest})=>(
+    <Route 
+        {...rest} 
+        render={props =>
+         fakeAuth.isAuthenticated ? (
+            <ProtectedComponent {...props} />
+         ):(
+            <Redirect to = {{
+                pathname:'/signin', 
+                state:{from: props.location}
+            }}/>
+            )
+        }
+    />
 );
